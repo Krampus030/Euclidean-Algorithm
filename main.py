@@ -25,7 +25,8 @@ class GCD:
 
         return f"{self.a} is the GCD of a and b"
 
-
+    def __str__(self):
+        return self.euclidean_algorithm()
 
 
 GCD1 = GCD(100,99)
