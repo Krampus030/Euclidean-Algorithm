@@ -3,17 +3,18 @@ class GCD:
     create two variables and the main algorithm as a method
 
     """
+
     def __init__(self, a, b):
         self.a = a
         self.b = b
 
     def euclidean_algorithm(self):
+        times = 0
         # set the condition of iteration, the algorithm won't stop before reaching the answer
         while self.b != 0:
             print(f"a = {self.a}, b = {self.b}")
 
             remainder = self.a % self.b  # A = Q * B + R, This is R
-            times = 0
 
             print(f" The remainder of {self.a} divider by {self.b} is {remainder}")
 
@@ -36,5 +37,15 @@ class GCD:
         return self.euclidean_algorithm()
 
 
-GCD1 = GCD(100, 99)  # create the object and print the results
-print(GCD1)
+while True:
+    """
+    keep the program iterative 
+    """
+    x = int(input("Please enter the first number here.\n "))
+    y = int(input("Please enter the second number here.\n "))
+
+    if x >= 0 and y >= 0:
+        GCD1 = GCD(x, y)  # only if the inputs are validated, create the object and print the results
+        print(GCD1)
+    else:
+        print("Your input is not valid, please try again")  # error message
