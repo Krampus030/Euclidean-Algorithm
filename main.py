@@ -38,14 +38,21 @@ class GCD:
 
 
 while True:
-    """
-    keep the program iterative 
-    """
-    x = int(input("Please enter the first number here.\n "))
-    y = int(input("Please enter the second number here.\n "))
 
-    if x >= 0 and y >= 0:
-        GCD1 = GCD(x, y)  # only if the inputs are validated, create the object and print the results
-        print(GCD1)
-    else:
-        print("Your input is not valid, please try again")  # error message
+    try:
+        """
+        keep the program iterative 
+        use try except to show error message when the user input is invalid(number or string)
+        """
+        x = int(input("Please enter the first number:\n "))
+        y = int(input("Please enter the second number:\n"))
+
+        if x < 0 or y < 0:
+            print("Only non-negative integers are allowed. Please try again.")
+            continue
+
+        gcd_instance = GCD(x, y)
+        print(gcd_instance)
+
+    except ValueError:
+        print("Invalid input! Please enter an integer.")  # error message
